@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import styles from '../../styles/AnimatedDownload.module.css';
 
 const AnimatedDownload = ({
-  fileName = 'Thushal_Rashmitha_CV.pdf',
+  fileName = 'Thushal_Rashmitha.pdf',
   className = '',
 }) => {
   const [isDownloading, setIsDownloading] = useState(false);
