@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from '../../styles/CarouselModal.module.css';
 
@@ -14,14 +14,19 @@ interface CarouselModalProps {
   onClose: () => void;
 }
 
-const CarouselModal: React.FC<CarouselModalProps> = ({
-  isOpen,
-  images,
-  initialIndex = 0,
-  onClose,
-}) => {
+const CarouselModal: React.FC<CarouselModalProps> = ({ isOpen, images, initialIndex = 0, onClose }) => {
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
   const [direction, setDirection] = useState<'next' | 'prev'>('next');
+
+  const handleNext = useCallback(() => {
+    setDirection('next');
+    setCurrentIndex(prev => (prev + 1) % images.length);
+  }, [images.length]);
+
+  const handlePrev = useCallback(() => {
+    setDirection('prev');
+    setCurrentIndex(prev => (prev - 1 + images.length) % images.length);
+  }, [images.length]);
 
   useEffect(() => {
     setCurrentIndex(initialIndex);
@@ -29,18 +34,12 @@ const CarouselModal: React.FC<CarouselModalProps> = ({
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        onClose();
-      }
+      if (e.key === 'Escape') onClose();
     };
 
     const handleArrows = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowLeft') {
-        handlePrev();
-      }
-      if (e.key === 'ArrowRight') {
-        handleNext();
-      }
+      if (e.key === 'ArrowLeft') handlePrev();
+      if (e.key === 'ArrowRight') handleNext();
     };
 
     if (isOpen) {
@@ -54,17 +53,7 @@ const CarouselModal: React.FC<CarouselModalProps> = ({
       document.removeEventListener('keydown', handleArrows);
       document.body.style.overflow = 'unset';
     };
-  }, [isOpen, onClose, currentIndex, images.length]);
-
-  const handleNext = () => {
-    setDirection('next');
-    setCurrentIndex((prev) => (prev + 1) % images.length);
-  };
-
-  const handlePrev = () => {
-    setDirection('prev');
-    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
-  };
+  }, [isOpen, onClose, handleNext, handlePrev]); // ✅ dependencies fixed
 
   const currentImage = images[currentIndex];
 
@@ -87,15 +76,10 @@ const CarouselModal: React.FC<CarouselModalProps> = ({
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
             onClick={(e) => e.stopPropagation()}
           >
-            <button
-              className={styles.closeButton}
-              onClick={onClose}
-              aria-label="Close modal"
-            >
+            <button className={styles.closeButton} onClick={onClose} aria-label="Close modal">
               ✕
             </button>
 
-            {/* Main Image */}
             <div className={styles.imageWrapper}>
               <AnimatePresence mode="wait">
                 <motion.img
@@ -111,46 +95,28 @@ const CarouselModal: React.FC<CarouselModalProps> = ({
               </AnimatePresence>
             </div>
 
-            {/* Navigation Controls */}
             {images.length > 1 && (
               <>
-                {/* Arrow Buttons */}
-                <button
-                  className={`${styles.navButton} ${styles.prevButton}`}
-                  onClick={handlePrev}
-                  aria-label="Previous image"
-                >
+                <button className={`${styles.navButton} ${styles.prevButton}`} onClick={handlePrev} aria-label="Previous image">
                   ‹
                 </button>
-                <button
-                  className={`${styles.navButton} ${styles.nextButton}`}
-                  onClick={handleNext}
-                  aria-label="Next image"
-                >
+                <button className={`${styles.navButton} ${styles.nextButton}`} onClick={handleNext} aria-label="Next image">
                   ›
                 </button>
 
-                {/* Info Bar */}
                 <div className={styles.info}>
-                  <div className={styles.infoLeft}>
-                    <h2>{currentImage.title}</h2>
-                  </div>
+                  <div className={styles.infoLeft}><h2>{currentImage.title}</h2></div>
                   <div className={styles.infoRight}>
-                    <span className={styles.counter}>
-                      {currentIndex + 1} / {images.length}
-                    </span>
+                    <span className={styles.counter}>{currentIndex + 1} / {images.length}</span>
                   </div>
                 </div>
 
-                {/* Thumbnail Carousel */}
                 <div className={styles.thumbnailCarousel}>
                   <div className={styles.thumbnailScroll}>
                     {images.map((img, index) => (
                       <motion.button
                         key={index}
-                        className={`${styles.thumbnail} ${
-                          index === currentIndex ? styles.active : ''
-                        }`}
+                        className={`${styles.thumbnail} ${index === currentIndex ? styles.active : ''}`}
                         onClick={() => {
                           setDirection(index > currentIndex ? 'next' : 'prev');
                           setCurrentIndex(index);
@@ -164,10 +130,7 @@ const CarouselModal: React.FC<CarouselModalProps> = ({
                   </div>
                 </div>
 
-                {/* Hint */}
-                <div className={styles.hint}>
-                  <span>← → Arrow keys • ESC to close</span>
-                </div>
+                <div className={styles.hint}><span>← → Arrow keys • ESC to close</span></div>
               </>
             )}
           </motion.div>
