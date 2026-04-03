@@ -106,22 +106,4 @@ export const uxuiProjects = [
     aspectRatio: '16/9',
     gridSize: 'large',
   },
-  {
-    id: 106,
-    slug: 'professional-profile-document',
-    title: 'Professional Profile',
-    subtitle: 'Document Design & CV',
-    category: 'UI/UX Design',
-    thumbnail: '/ux_ui_designs/UI1.jpg',
-    images: [
-      { image: '/ux_ui_designs/UI1.jpg', title: 'Professional Document Layout' },
-    ],
-    description: 'Minimalist professional document design with clear information hierarchy and print-ready formatting',
-    fullDescription:
-      'Professional Profile document showcases refined typographic design principles applied to CV/resume format. Features clean sans-serif typography, strategic whitespace utilization, and scannable information blocks. Designed for both digital and print use cases, emphasizing readability and professional presentation. Demonstrates mastery of information architecture, typography scale hierarchies, and minimal color usage for maximum impact.',
-    technologies: ['Typography', 'Document Design', 'Information Architecture', 'Print Design'],
-    year: 2026,
-    aspectRatio: 'auto',
-    gridSize: 'small',
-  },
 ];

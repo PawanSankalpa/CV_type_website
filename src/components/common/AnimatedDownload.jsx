@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import styles from '../../styles/AnimatedDownload.module.css';
 
 const AnimatedDownload = ({
-  fileName = 'cv.pdf',
+  fileName = 't_CV.pdf',
   className = '',
 }) => {
   const [isDownloading, setIsDownloading] = useState(false);
@@ -13,7 +13,7 @@ const AnimatedDownload = ({
 
     setTimeout(() => {
       const link = document.createElement('a');
-      link.href = `t_CV.pdf`;
+      link.href = '/t_CV.pdf';
       link.download = fileName;
       document.body.appendChild(link);
       link.click();

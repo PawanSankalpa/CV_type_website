@@ -5,6 +5,7 @@ import { uxuiProjects } from '../data/uxuiProjects';
 import { brandProjects } from '../data/brandProjects';
 import PortfolioFilter from '../components/portfolio/PortfolioFilter';
 import PortfolioGrid from '../components/portfolio/PortfolioGrid';
+import AnimatedDownload from '../components/common/AnimatedDownload';
 import styles from '../styles/Portfolio.module.css';
 
 const Portfolio = () => {
@@ -34,9 +35,7 @@ const Portfolio = () => {
               Strategic design solutions for brands that demand excellence. From brand identity
               to UI/UX, every project is crafted to deliver impact.
             </p>
-            <a href="/cv.pdf" download className={styles.cvButton}>
-              Download CV &#x2193;
-            </a>
+            <AnimatedDownload fileName="t_CV.pdf" />
           </motion.div>
         </div>
       </section>
