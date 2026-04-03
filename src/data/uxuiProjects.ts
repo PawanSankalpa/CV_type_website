@@ -1,0 +1,149 @@
+// Define UX/UI design projects with carousel support
+export interface CarouselImage {
+  image: string;
+  title: string;
+}
+
+export interface UXUIProject {
+  id: number;
+  slug: string;
+  title: string;
+  subtitle: string;
+  category: string;
+  thumbnail: string; // Main/first image shown in portfolio
+  images: CarouselImage[]; // All pages/screens
+  description: string;
+  fullDescription: string;
+  technologies: string[];
+  year: number;
+  aspectRatio?: string;
+  gridSize?: 'small' | 'medium' | 'large'; // For bento layout
+}
+
+export const uxuiProjects: UXUIProject[] = [
+  {
+    id: 101,
+    slug: 'cool-ice-app',
+    title: 'Cool Ice',
+    subtitle: 'Premium Ice Cream Ordering App',
+    category: 'UI/UX Design',
+    thumbnail: '/ux_ui_designs/PHOTO-2026-03-01-14-36-01.jpg',
+    images: [
+      { image: '/ux_ui_designs/PHOTO-2026-03-01-14-36-01.jpg', title: 'Welcome Screen' },
+      { image: '/ux_ui_designs/PHOTO-2026-03-01-14-36-35.jpg', title: 'Home - Browse Products' },
+      { image: '/ux_ui_designs/PHOTO-2026-03-01-14-37-22.jpg', title: 'Butterscotch Details' },
+      { image: '/ux_ui_designs/PHOTO-2026-03-01-14-38-03.jpg', title: 'Product Browsing' },
+      { image: '/ux_ui_designs/PHOTO-2026-03-01-14-38-40.jpg', title: 'Eggnog Selection' },
+      { image: '/ux_ui_designs/PHOTO-2026-03-01-14-39-19.jpg', title: 'Flavor Grid' },
+      { image: '/ux_ui_designs/PHOTO-2026-03-01-14-39-57.jpg', title: 'Pistachio Flavor' },
+      { image: '/ux_ui_designs/PHOTO-2026-03-01-14-40-55.jpg', title: 'Browse More' },
+      { image: '/ux_ui_designs/PHOTO-2026-03-01-14-41-34.jpg', title: 'Nutella Premium' },
+      { image: '/ux_ui_designs/PHOTO-2026-03-01-14-42-24.jpg', title: 'Product Selection' },
+      { image: '/ux_ui_designs/PHOTO-2026-03-01-14-42-57.jpg', title: 'You Like This' },
+    ],
+    description: 'Delightful mobile app for ordering premium ice cream with smooth browsing and personalized recommendations',
+    fullDescription:
+      'Cool Ice is a vibrant mobile app UI showcasing an intuitive ice cream ordering platform. Features a welcoming hero screen, browsable product catalog with rich flavor details, customizable selections, and AI-powered recommendations. The design emphasizes user delight with playful yellow branding, crisp typography, and seamless checkout flow.',
+    technologies: ['Figma', 'Mobile UI/UX', 'E-commerce', 'Prototyping'],
+    year: 2026,
+    aspectRatio: '9/16',
+    gridSize: 'medium',
+  },
+  {
+    id: 102,
+    slug: 'sri-lanka-hotels',
+    title: 'Sri Lanka Hotels',
+    subtitle: 'Dream Vacation Booking Platform',
+    category: 'UI/UX Design',
+    thumbnail: '/ux_ui_designs/PHOTO-2026-03-08-23-29-03.jpg',
+    images: [
+      { image: '/ux_ui_designs/PHOTO-2026-03-08-23-29-03.jpg', title: 'Homepage Hero' },
+      { image: '/ux_ui_designs/PHOTO-2026-03-08-23-29-28.jpg', title: 'Smart Location Search' },
+      { image: '/ux_ui_designs/PHOTO-2026-03-08-23-30-02.jpg', title: 'Hotels for You' },
+      { image: '/ux_ui_designs/PHOTO-2026-03-08-23-30-27.jpg', title: 'Services & Amenities' },
+      { image: '/ux_ui_designs/PHOTO-2026-03-08-23-30-49.jpg', title: 'User Registration' },
+      { image: '/ux_ui_designs/PHOTO-2026-03-08-23-31-25.jpg', title: 'Guest Profile' },
+      { image: '/ux_ui_designs/PHOTO-2026-03-08-23-31-51.jpg', title: 'Secure Login' },
+    ],
+    description: 'Sophisticated web platform for discovering and booking dream vacation accommodations across Sri Lanka',
+    fullDescription:
+      'Sri Lanka Hotels is a professional booking platform UI combining desktop and mobile experiences. Showcasing an elegant homepage with immersive imagery, smart search functionality, comprehensive hotel listings with pricing, service amenities, and seamless authentication flow. Designed for travelers seeking luxury accommodations with peace of mind.',
+    technologies: ['Figma', 'Web UI/UX', 'Responsive Design', 'Booking System'],
+    year: 2026,
+    aspectRatio: '16/9',
+    gridSize: 'large',
+  },
+  {
+    id: 103,
+    slug: 'ict-kedalla-portal',
+    title: 'ICT Kedalla',
+    subtitle: 'Advanced Student Learning Management',
+    category: 'UI/UX Design',
+    thumbnail: '/ux_ui_designs/PHOTO-2026-03-08-23-32-41.jpg',
+    images: [
+      { image: '/ux_ui_designs/PHOTO-2026-03-08-23-32-41.jpg', title: 'Secure Login' },
+      { image: '/ux_ui_designs/PHOTO-2026-03-08-23-33-00.jpg', title: 'Student Dashboard' },
+    ],
+    description: 'Modern learning management system for students with comprehensive course management and educational tools',
+    fullDescription:
+      'ICT Kedalla is a sophisticated education platform UI featuring modern gradient aesthetics and intuitive navigation. Designed for students to access classes, learning materials, take exams, track results, and engage with assignments. The dashboard provides at-a-glance status of academic progress with quick access to essential educational resources.',
+    technologies: ['Figma', 'Web UI/UX', 'Educational Tech', 'Dashboard Design'],
+    year: 2026,
+    aspectRatio: '16/10',
+    gridSize: 'small',
+  },
+  {
+    id: 104,
+    slug: 'ask-social-messaging',
+    title: 'ASK',
+    subtitle: 'Modern Social Messaging Platform',
+    category: 'UI/UX Design',
+    thumbnail: '/ux_ui_designs/ACE_Scanner.jpg',
+    images: [
+      { image: '/ux_ui_designs/ACE_Scanner.jpg', title: 'Welcome Screen with Neon Branding' },
+    ],
+    description: 'Contemporary mobile messaging app with striking neon aesthetics and minimalist interaction design',
+    fullDescription:
+      'ASK is a modern social messaging platform UI showcasing a bold design philosophy. Features neon gradient typography (red, cyan, blue spectrum), dark mode optimization for extended use, and a minimalist interface that prioritizes clarity and visual impact. The welcome screen establishes brand identity through vibrant color palette while maintaining clean, accessible information hierarchy. Designed for Gen-Z users seeking intuitive, visually engaging communication platforms.',
+    technologies: ['Figma', 'Mobile UI/UX', 'App Design', 'Branding', 'Dark Mode'],
+    year: 2026,
+    aspectRatio: '9/16',
+    gridSize: 'medium',
+  },
+  {
+    id: 105,
+    slug: 'apexonline-education-portal',
+    title: 'ApexOnline.lk',
+    subtitle: 'Student Learning Management Portal',
+    category: 'UI/UX Design',
+    thumbnail: '/ux_ui_designs/UI_5.jpg',
+    images: [
+      { image: '/ux_ui_designs/UI_5.jpg', title: 'Login Interface with Illustration' },
+    ],
+    description: 'Professional education platform with friendly illustration-driven design and secure authentication',
+    fullDescription:
+      'ApexOnline.lk is a comprehensive Student Learning Management Portal UI emphasizing user friendliness and accessibility. The login interface features a custom illustration of smiling students engaged in collaborative learning, establishing an approachable yet professional brand identity. Red accent branding (A logo) conveys trust and energy, balanced by clean white space and minimal typography. The design successfully bridges professional credibility with welcoming educational warmth. Includes support hotline, password recovery, and student registration options for seamless onboarding.',
+    technologies: ['Figma', 'Web UI/UX', 'Education Platform', 'Illustration', 'Responsive Design'],
+    year: 2026,
+    aspectRatio: '16/9',
+    gridSize: 'large',
+  },
+  {
+    id: 106,
+    slug: 'professional-profile-document',
+    title: 'Professional Profile',
+    subtitle: 'Document Design & CV',
+    category: 'UI/UX Design',
+    thumbnail: '/ux_ui_designs/UI1.jpg',
+    images: [
+      { image: '/ux_ui_designs/UI1.jpg', title: 'Professional Document Layout' },
+    ],
+    description: 'Minimalist professional document design with clear information hierarchy and print-ready formatting',
+    fullDescription:
+      'Professional Profile document showcases refined typographic design principles applied to CV/resume format. Features clean sans-serif typography, strategic whitespace utilization, and scannable information blocks. Designed for both digital and print use cases, emphasizing readability and professional presentation. Demonstrates mastery of information architecture, typography scale hierarchies, and minimal color usage for maximum impact.',
+    technologies: ['Typography', 'Document Design', 'Information Architecture', 'Print Design'],
+    year: 2026,
+    aspectRatio: 'auto',
+    gridSize: 'small',
+  },
+];

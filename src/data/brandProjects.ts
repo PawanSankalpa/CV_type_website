@@ -1,0 +1,183 @@
+import { CarouselImage } from './uxuiProjects';
+
+export interface BrandProject {
+  id: number;
+  slug: string;
+  title: string;
+  subtitle: string;
+  category: string;
+  thumbnail: string;
+  images: CarouselImage[];
+  description: string;
+  fullDescription: string;
+  technologies: string[];
+  year: number;
+  aspectRatio?: string;
+  gridSize?: 'small' | 'medium' | 'large';
+}
+
+export const brandProjects: BrandProject[] = [
+  {
+    id: 201,
+    slug: 'luxia-premium-polo-mockup',
+    title: 'Premium Polo Identity',
+    subtitle: 'Full Product Design System',
+    category: 'Brand Identity',
+    thumbnail: '/brand/PHOTO-2026-03-14-12-02-00.jpg',
+    images: [
+      { image: '/brand/PHOTO-2026-03-14-12-02-00.jpg', title: 'Premium Polo Front & Back' },
+    ],
+    description: 'Navy and white polo shirt design with embroidered branding and color-blocking excellence',
+    fullDescription:
+      'The cornerstone of LUXIA\'s apparel strategy. This premium polo shirt design showcases meticulously crafted color-blocking with navy body, white contrast sleeves, and precise gold piping details. The embroidered chest logo and full-back "2025 AL ICT BATCH JANAKA WICKRAMAGE" branding creates a professional yet youthful aesthetic. Available in S, L, M, XL sizes at ₽1,700. This design bridges institutional pride with contemporary lifestyle fashion.',
+    technologies: ['Apparel Design', 'Product Mockup', 'Color Theory', 'Embroidery Design'],
+    year: 2026,
+    aspectRatio: '9/16',
+    gridSize: 'medium',
+  },
+  {
+    id: 202,
+    slug: 'luxia-back-branding-technical',
+    title: 'Back Technical Branding',
+    subtitle: 'Embroidered Cohort Identity',
+    category: 'Brand Identity',
+    thumbnail: '/brand/PHOTO-2026-03-14-12-02-01 (1).jpg',
+    images: [
+      { image: '/brand/PHOTO-2026-03-14-12-02-01 (1).jpg', title: 'Back Embroidery Detail' },
+    ],
+    description: 'Full-back embroidered text showcasing batch cohort identity and technical precision',
+    fullDescription:
+      'The back embroidery becomes a statement piece. Bold blue embroidery reading "2025 AL ICT BATCH JANAKA WICKRAMAGE" across the back shoulders identifies wearers as part of an elite cohort. This technical branding approach transforms the garment into a badge of belonging—part uniform, part lifestyle statement. The embroidery placement and sizing demonstrate masterful textile design principles.',
+    technologies: ['Embroidery Design', 'Typography on Fabric', 'Technical Branding', 'Textile Precision'],
+    year: 2026,
+    aspectRatio: '2/3',
+    gridSize: 'small',
+  },
+  {
+    id: 203,
+    slug: 'luxia-color-palette-system',
+    title: 'Color Palette Strategy',
+    subtitle: 'Navy, White & Gold Harmony',
+    category: 'Brand Identity',
+    thumbnail: '/brand/PHOTO-2026-03-14-12-02-01.jpg',
+    images: [
+      { image: '/brand/PHOTO-2026-03-14-12-02-01.jpg', title: 'Color System Showcase' },
+    ],
+    description: 'Strategic color palette combining navy sophistication, white clarity, and gold luxury',
+    fullDescription:
+      'Color psychology drives LUXIA\'s visual identity. Navy blue conveys professionalism and trust—essential for an educational batch brand. White creates contrast and clarity, ensuring visibility and modernity. Gold accents inject premium luxury, signaling quality and exclusivity. This tri-color system works across all applications: polo shirts, embroidery, digital assets, and event branding. The palette reflects the brand promise: tech-forward, premium, and aspirational.',
+    technologies: ['Color Theory', 'Brand Systems', 'Design Psychology', 'Visual Hierarchy'],
+    year: 2026,
+    aspectRatio: '15/16',
+    gridSize: 'medium',
+  },
+  {
+    id: 204,
+    slug: 'luxia-batch-event-launch',
+    title: 'Batch Event Launch',
+    subtitle: 'Community Gathering Moment',
+    category: 'Brand Identity',
+    thumbnail: '/brand/PHOTO-2026-03-14-12-07-28.jpg',
+    images: [
+      { image: '/brand/PHOTO-2026-03-14-12-07-28.jpg', title: 'ICT 2025 Event Launch' },
+    ],
+    description: 'Raw energy of the ICT 2025 batch coming together in branded apparel for the first time',
+    fullDescription:
+      'This moment captures something irreplaceable: the first gathering where institutional branding becomes lived reality. Cohort members wearing LUXIA polos in celebration, covered in celebratory confetti, embodies the "Wear the Vibe, Own the Moment" philosophy. The photograph transcends product documentation—it\'s a lifestyle moment that proves brand identity resonates beyond merchandise. Real people, real celebration, real connection.',
+    technologies: ['Lifestyle Photography', 'Event Documentation', 'Community Branding', 'Emotional Storytelling'],
+    year: 2026,
+    aspectRatio: '2/3',
+    gridSize: 'small',
+  },
+  {
+    id: 205,
+    slug: 'luxia-community-gathering',
+    title: 'Cohort Pride Display',
+    subtitle: 'Unified Identity Moment',
+    category: 'Brand Identity',
+    thumbnail: '/brand/PHOTO-2026-03-14-12-07-52.jpg',
+    images: [
+      { image: '/brand/PHOTO-2026-03-14-12-07-52.jpg', title: 'Community Celebration' },
+    ],
+    description: 'Multiple cohort members showcasing the brand identity as a symbol of belonging and shared purpose',
+    fullDescription:
+      'Community strength captured in frame. When multiple wearers come together in LUXIA branded apparel, the power multiplies. The polo shirts create instant visual recognition—a tribe, a community, a movement. This image demonstrates the transformative power of cohort branding: isolated individuals become unified group, institutional pride becomes lifestyle statement. Each person wearing LUXIA becomes a brand ambassador for the ICT 2025 generation.',
+    technologies: ['Group Photography', 'Community Dynamics', 'Brand Amplification', 'Tribal Marketing'],
+    year: 2026,
+    aspectRatio: '3/4',
+    gridSize: 'small',
+  },
+  {
+    id: 206,
+    slug: 'luxia-logo-embroidery-badge',
+    title: 'Embroidered Logo Badge',
+    subtitle: 'Geometric Icon Mastery',
+    category: 'Brand Identity',
+    thumbnail: '/brand/PHOTO-2026-03-14-12-08-38.jpg',
+    images: [
+      { image: '/brand/PHOTO-2026-03-14-12-08-38.jpg', title: 'Logo Embroidery Badge' },
+    ],
+    description: 'Intricate circular badge logo featuring geometric design and embroidered craftsmanship',
+    fullDescription:
+      'The LUXIA logo emerges as pure visual poetry. Concentric circular rings spiral outward, adorned with six equidistant spheres representing innovation nodes and human connection points. Central "ICT" text in bold architectural styling anchors the composition. "JANAKA WICKRAMAGE" curves along the perimeter, completing the seal. Rendered in white embroidery thread on navy fabric, the logo symbolizes the intersection of technology and humanity—geometric precision meets organic warmth. This mark distinguishes LUXIA as a brand of intentional design.',
+    technologies: ['Logo Design', 'Embroidery Design', 'Geometric Illustration', 'Brand Symbolism'],
+    year: 2026,
+    aspectRatio: '3/4',
+    gridSize: 'large',
+  },
+  {
+    id: 207,
+    slug: 'luxia-logo-detail-closeup',
+    title: 'Logo Embroidery Detail',
+    subtitle: 'Textile Craftsmanship Excellence',
+    category: 'Brand Identity',
+    thumbnail: '/brand/PHOTO-2026-03-14-12-08-39.jpg',
+    images: [
+      { image: '/brand/PHOTO-2026-03-14-12-08-39.jpg', title: 'Close-up Logo Embroidery' },
+    ],
+    description: 'Premium embroidery execution showing meticulous thread work and material quality',
+    fullDescription:
+      'In this intimate close-up, LUXIA reveals its commitment to excellence. Every thread perfectly placed. Every stitch deliberate. The embroidered logo becomes a testament to traditional craftsmanship applied to contemporary design. The geometric patterns hold flawlessly. The thread tension creates dimensional depth. This level of detail separates LUXIA from fast-fashion merchandise—it\'s a premium brand built on quality execution. When wearers inspect their polo, they find artisanship reflected in every aspect.',
+    technologies: ['Embroidery Execution', 'Quality Control', 'Textile Art', 'Craftsmanship Documentation'],
+    year: 2026,
+    aspectRatio: '3/4',
+    gridSize: 'medium',
+  },
+  {
+    id: 208,
+    slug: 'luxia-community-portrait-lifestyle',
+    title: 'Community Portrait',
+    subtitle: 'Lifestyle Integration Moment',
+    category: 'Brand Identity',
+    thumbnail: '/brand/PHOTO-2026-03-14-12-09-28.jpg',
+    images: [
+      { image: '/brand/PHOTO-2026-03-14-12-09-28.jpg', title: 'Community Lifestyle Portrait' },
+    ],
+    description: 'Cohort members in candid moments wearing LUXIA as part of their everyday identity',
+    fullDescription:
+      'This is where branding transcends marketing. LUXIA becomes authentic lifestyle choice, not forced merchandise. Candid moments of cohort members, naturally wearing their batch brand, tells a powerful story: "This is who we are. This is what we wear. This matters to us." The polo isn\'t a one-time event item—it\'s integrated into daily life. The casual confidence of wearers proves the brand successfully bridges the gap between institutional pride and personal style.',
+    technologies: ['Candid Photography', 'Lifestyle Marketing', 'Authentic Branding', 'Community Storytelling'],
+    year: 2026,
+    aspectRatio: '3/4',
+    gridSize: 'medium',
+  },
+  {
+    id: 209,
+    slug: 'luxia-brand-movement-statement',
+    title: 'Movement Moment',
+    subtitle: '"Wear the Vibe, Own the Moment"',
+    category: 'Brand Identity',
+    thumbnail: '/brand/PHOTO-2026-03-14-12-09-29.jpg',
+    images: [
+      { image: '/brand/PHOTO-2026-03-14-12-09-29.jpg', title: 'LUXIA Brand Philosophy in Action' },
+    ],
+    description: 'The culmination of LUXIA\'s brand philosophy: unified group embodying collective identity and aspirational lifestyle',
+    fullDescription:
+      'Every great brand tells a story. LUXIA\'s story peaks in this moment: a diverse group of cohort members, united in branded apparel, representing the future. Not costumes. Not uniforms. Identity. The polo has become more than merchandise—it\'s a symbol of belonging to a progressive community of tech innovators. "Wear the Vibe, Own the Moment" isn\'t just a tagline; it\'s a live demonstration. These are people who get it. People who understand that what you wear reflects who you are and what you believe. LUXIA isn\'t selling polos. LUXIA is selling membership to a tribe.',
+    technologies: ['Group Branding', 'Lifestyle Photography', 'Community Identity', 'Brand Philosophy'],
+    year: 2026,
+    aspectRatio: '3/4',
+    gridSize: 'large',
+  },
+];
+

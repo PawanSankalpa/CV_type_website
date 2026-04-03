@@ -1,0 +1,135 @@
+.portfolio {
+  min-height: 100vh;
+}
+
+.hero {
+  padding: var(--section-padding-y) 0 clamp(2rem, 8vw, 3.5rem) 0;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter-mobile);
+}
+
+.hero .container {
+  max-width: 680px;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  margin-bottom: var(--spacing-6);
+}
+
+.hero p {
+  font-size: 0.95rem;
+  line-height: var(--line-height-normal);
+  margin-bottom: var(--spacing-xl);
+}
+
+.cvButton {
+  display: inline-block;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, var(--text-primary) 0%, rgba(0, 0, 0, 0.8) 100%);
+  color: var(--white);
+  border-radius: 0;
+  font-weight: var(--font-weight-semibold);
+  font-size: 0.9375rem;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  transition: all var(--transition-base);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  margin-top: var(--spacing-lg);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.cvButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.16);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, var(--text-primary) 100%);
+}
+
+.cvButton:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.projects {
+  padding: var(--section-padding-y) 0;
+}
+
+.cta {
+  padding: var(--section-padding-y) 0;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+}
+
+.cta .container {
+  max-width: 580px;
+}
+
+.cta h2 {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  margin-bottom: var(--spacing-lg);
+}
+
+.cta p {
+  font-size: 0.95rem;
+  margin-bottom: var(--spacing-xl);
+}
+
+.contactLink {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: var(--text-primary);
+  color: var(--white);
+  border-radius: 0;
+  font-weight: var(--font-weight-medium);
+  transition: all var(--transition-base);
+  box-shadow: none;
+  font-size: 0.9375rem;
+  letter-spacing: 0;
+}
+
+.contactLink:hover {
+  background-color: var(--neutral-800);
+  box-shadow: none;
+  transform: none;
+  opacity: 0.85;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero,
+  .projects,
+  .cta {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+  }
+
+  .hero p {
+    font-size: 0.875rem;
+  }
+
+  .cvButton {
+    padding: 10px 24px;
+    font-size: 0.875rem;
+    margin-top: var(--spacing-lg);
+  }
+
+  .cta h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+  }
+}
