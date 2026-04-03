@@ -18,12 +18,13 @@ const Portfolio: React.FC = () => {
   // Update categories to include UX/UI and Brand Identity if not present
   const updatedCategories = Array.from(new Set([...categories, 'UI/UX Design', 'Brand Identity']));
 
+  // ✅ Fixed: added allProjects to dependency array
   const filteredProjects = useMemo(() => {
     if (activeCategory === 'All') {
       return allProjects;
     }
     return allProjects.filter((project) => project.category === activeCategory);
-  }, [activeCategory]);
+  }, [activeCategory, allProjects]); // ✅ added allProjects here
 
   return (
     <div className={styles.portfolio}>
