@@ -2,21 +2,9 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from '../../styles/CarouselModal.module.css';
 
-interface CarouselImage {
-  image: string;
-  title: string;
-}
-
-interface CarouselModalProps {
-  isOpen: boolean;
-  images: CarouselImage[];
-  initialIndex?: number;
-  onClose: () => void;
-}
-
-const CarouselModal: React.FC<CarouselModalProps> = ({ isOpen, images, initialIndex = 0, onClose }) => {
+const CarouselModal = ({ isOpen, images, initialIndex = 0, onClose }) => {
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
-  const [direction, setDirection] = useState<'next' | 'prev'>('next');
+  const [direction, setDirection] = useState('next');
 
   const handleNext = useCallback(() => {
     setDirection('next');
@@ -33,11 +21,11 @@ const CarouselModal: React.FC<CarouselModalProps> = ({ isOpen, images, initialIn
   }, [initialIndex, isOpen]);
 
   useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
+    const handleEscape = (e) => {
       if (e.key === 'Escape') onClose();
     };
 
-    const handleArrows = (e: KeyboardEvent) => {
+    const handleArrows = (e) => {
       if (e.key === 'ArrowLeft') handlePrev();
       if (e.key === 'ArrowRight') handleNext();
     };

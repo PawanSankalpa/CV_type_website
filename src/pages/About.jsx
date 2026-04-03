@@ -8,7 +8,7 @@ import 'swiper/css';
 import 'swiper/css/effect-fade';
 import styles from '../styles/About.module.css';
 
-const About: React.FC = () => {
+const About = () => {
   const skills = [
     ['Adobe Photoshop', 'Adobe Illustrator', 'Adobe InDesign', 'Figma'],
     ['UI/UX Design', 'Branding Design', 'Social Media Design', 'Canva'],
@@ -27,7 +27,10 @@ const About: React.FC = () => {
           >
             <h1>About Me</h1>
             <p className={styles.lead}>
-              I'm Thushal Rashmitha Palihawadana, a passionate UI/UX designer and graphic designer dedicated to creating modern, clean designs that elevate brands. With extensive experience in design thinking and digital creation, I specialize in crafting eye-catching visuals that resonate with audiences and drive meaningful results.
+              I'm Thushal Rashmitha Palihawadana, a passionate UI/UX designer and graphic designer
+              dedicated to creating modern, clean designs that elevate brands. With extensive
+              experience in design thinking and digital creation, I specialize in crafting
+              eye-catching visuals that resonate with audiences and drive meaningful results.
             </p>
           </motion.div>
 
@@ -40,34 +43,19 @@ const About: React.FC = () => {
             <Swiper
               modules={[Autoplay, EffectFade]}
               effect="fade"
-              autoplay={{
-                delay: 5000,
-                disableOnInteraction: false,
-              }}
+              autoplay={{ delay: 5000, disableOnInteraction: false }}
               fadeEffect={{ crossFade: true }}
               speed={1500}
               className={styles.carousel}
             >
               <SwiperSlide className={styles.slide}>
-                <img
-                  src="/thushal_cover_photo.jpg"
-                  alt="Portrait 1"
-                  className={styles.image}
-                />
+                <img src="/thushal_cover_photo.jpg" alt="Portrait 1" className={styles.image} />
               </SwiperSlide>
               <SwiperSlide className={styles.slide}>
-                <img
-                  src="/thushal_cover_photo.jpg"
-                  alt="Portrait 2"
-                  className={styles.image}
-                />
+                <img src="/thushal_cover_photo.jpg" alt="Portrait 2" className={styles.image} />
               </SwiperSlide>
               <SwiperSlide className={styles.slide}>
-                <img
-                  src="/thushal_cover_photo.jpg"
-                  alt="Portrait 3"
-                  className={styles.image}
-                />
+                <img src="/thushal_cover_photo.jpg" alt="Portrait 3" className={styles.image} />
               </SwiperSlide>
             </Swiper>
           </motion.div>
@@ -78,17 +66,23 @@ const About: React.FC = () => {
         <div className={styles.container}>
           <h2>My Design Philosophy</h2>
           <p>
-            I believe in the power of thoughtful design. Every project begins with a deep understanding of the client's vision and their audience. Whether it's creating a brand identity from scratch or refining an existing visual language, I bring creativity, precision, and strategic thinking to every deliverable.
+            I believe in the power of thoughtful design. Every project begins with a deep
+            understanding of the client's vision and their audience. Whether it's creating a brand
+            identity from scratch or refining an existing visual language, I bring creativity,
+            precision, and strategic thinking to every deliverable.
           </p>
           <p>
-            My work spans across logo design, UI/UX design, social media content creation, brand identity development, and comprehensive design systems. I'm committed to delivering designs that are not just beautiful, but also functional and aligned with business objectives.
+            My work spans across logo design, UI/UX design, social media content creation, brand
+            identity development, and comprehensive design systems. I'm committed to delivering
+            designs that are not just beautiful, but also functional and aligned with business
+            objectives.
           </p>
         </div>
       </section>
 
       <section className={styles.skills}>
         <div className={styles.container}>
-          <h2>Skills & Tools</h2>
+          <h2>Skills &amp; Tools</h2>
           <div className={styles.skillsGrid}>
             {skills.map((group, idx) => (
               <motion.div

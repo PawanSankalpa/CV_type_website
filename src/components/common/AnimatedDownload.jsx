@@ -2,12 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import styles from '../../styles/AnimatedDownload.module.css';
 
-interface AnimatedDownloadProps {
-  fileName?: string;
-  className?: string;
-}
-
-const AnimatedDownload: React.FC<AnimatedDownloadProps> = ({
+const AnimatedDownload = ({
   fileName = 'cv.pdf',
   className = '',
 }) => {
@@ -15,8 +10,7 @@ const AnimatedDownload: React.FC<AnimatedDownloadProps> = ({
 
   const handleDownload = () => {
     setIsDownloading(true);
-    
-    // Simulate a brief download delay
+
     setTimeout(() => {
       const link = document.createElement('a');
       link.href = `t_CV.pdf`;
@@ -24,7 +18,7 @@ const AnimatedDownload: React.FC<AnimatedDownloadProps> = ({
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-      
+
       setIsDownloading(false);
     }, 500);
   };

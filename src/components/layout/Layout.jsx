@@ -3,12 +3,7 @@ import Header from './Header';
 import Footer from './Footer';
 import styles from '../../styles/Layout.module.css';
 
-interface LayoutProps {
-  children: React.ReactNode;
-  onContactOpen?: () => void;
-}
-
-const Layout: React.FC<LayoutProps> = ({ children, onContactOpen }) => {
+const Layout = ({ children, onContactOpen }) => {
   return (
     <div className={styles.layout}>
       <Header onContactOpen={onContactOpen} />

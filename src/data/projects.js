@@ -1,18 +1,4 @@
-export interface Project {
-  id: number;
-  slug: string;
-  title: string;
-  category: string;
-  image: string;
-  description: string;
-  fullDescription: string;
-  technologies: string[];
-  year: number;
-  link?: string;
-  aspectRatio?: string;
-}
-
-export const projectsData: Project[] = [
+export const projectsData = [
   {
     id: 13,
     slug: 'toyota-prius-bodykit',

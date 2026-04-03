@@ -6,11 +6,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Button from '../common/Button';
 import styles from '../../styles/ContactModal.module.css';
 
-interface ContactModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-}
-
 // Zod validation schemas
 const step1Schema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -22,19 +17,19 @@ const step2Schema = z.object({
   type: z.string(),
 });
 
-type Step1Data = z.infer<typeof step1Schema>;
-type Step2Data = z.infer<typeof step2Schema>;
 
-const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
+
+
+const ContactModal = ({ isOpen, onClose }) => {
   const [step, setStep] = useState(1);
-  const [step1Data, setStep1Data] = useState<Step1Data | null>(null);
+  const [step1Data, setStep1Data] = useState(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const {
     register: register1,
     handleSubmit: handleSubmit1,
     formState: { errors: errors1 },
-  } = useForm<Step1Data>({
+  } = useForm({
     resolver: zodResolver(step1Schema),
   });
 
@@ -42,16 +37,16 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
     register: register2,
     handleSubmit: handleSubmit2,
     formState: { errors: errors2 },
-  } = useForm<Step2Data>({
+  } = useForm({
     resolver: zodResolver(step2Schema),
   });
 
-  const onStep1Submit = (data: Step1Data) => {
+  const onStep1Submit = (data) => {
     setStep1Data(data);
     setStep(2);
   };
 
-  const onStep2Submit = (data: Step2Data) => {
+  const onStep2Submit = (data) => {
     if (step1Data) {
       console.log('Form submitted:', {
         ...step1Data,

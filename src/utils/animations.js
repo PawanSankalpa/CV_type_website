@@ -53,11 +53,11 @@ export const itemVariants = {
 export const hoverScale = {
   whileHover: { scale: 1.05 },
   whileTap: { scale: 0.98 },
-  transition: { type: 'spring' as const, stiffness: 300, damping: 10 },
+  transition: { type: 'spring', stiffness: 300, damping: 10 },
 };
 
 export const buttonHover = {
   whileHover: { scale: 1.02 },
   whileTap: { scale: 0.98 },
-  transition: { type: 'spring' as const, stiffness: 400, damping: 10 },
+  transition: { type: 'spring', stiffness: 400, damping: 10 },
 };

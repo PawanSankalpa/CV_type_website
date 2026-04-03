@@ -7,21 +7,18 @@ import PortfolioFilter from '../components/portfolio/PortfolioFilter';
 import PortfolioGrid from '../components/portfolio/PortfolioGrid';
 import styles from '../styles/Portfolio.module.css';
 
-type AllProjects = typeof projectsData[0] | typeof uxuiProjects[0] | typeof brandProjects[0];
-
-const Portfolio: React.FC = () => {
+const Portfolio = () => {
   const [activeCategory, setActiveCategory] = useState('All');
 
-  // ✅ Move allProjects inside useMemo to prevent re-creation on every render
   const filteredProjects = useMemo(() => {
-    const allProjects: AllProjects[] = [...projectsData, ...uxuiProjects, ...brandProjects];
-
+    const allProjects = [...projectsData, ...uxuiProjects, ...brandProjects];
     if (activeCategory === 'All') return allProjects;
-
     return allProjects.filter(project => project.category === activeCategory);
-  }, [activeCategory]); // ✅ only activeCategory needed
+  }, [activeCategory]);
 
-  const updatedCategories = Array.from(new Set([...categories, 'UI/UX Design', 'Brand Identity']));
+  const updatedCategories = Array.from(
+    new Set([...categories, 'UI/UX Design', 'Brand Identity'])
+  );
 
   return (
     <div className={styles.portfolio}>
@@ -34,11 +31,11 @@ const Portfolio: React.FC = () => {
           >
             <h1>Portfolio</h1>
             <p>
-              Strategic design solutions for brands that demand excellence. From brand identity to UI/UX, 
-              every project is crafted to deliver impact.
+              Strategic design solutions for brands that demand excellence. From brand identity
+              to UI/UX, every project is crafted to deliver impact.
             </p>
             <a href="/cv.pdf" download className={styles.cvButton}>
-              Download CV ↓
+              Download CV &#x2193;
             </a>
           </motion.div>
         </div>
@@ -64,13 +61,16 @@ const Portfolio: React.FC = () => {
       >
         <div className={styles.container}>
           <h2>Let's Create Something Amazing</h2>
-          <p>Ready to bring your vision to life? Let's work together to design something extraordinary.</p>
-          <a 
+          <p>
+            Ready to bring your vision to life? Let's work together to design something
+            extraordinary.
+          </p>
+          <a
             href="mailto:thushalrashmitha21@gmail.com"
             className={styles.contactLink}
             aria-label="Send email to thushalrashmitha21@gmail.com"
           >
-            Email Me →
+            Email Me &#x2192;
           </a>
         </div>
       </motion.section>

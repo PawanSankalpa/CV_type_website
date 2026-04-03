@@ -2,7 +2,7 @@ import React from 'react';
 import Hero from '../components/hero/Hero';
 import styles from '../styles/Home.module.css';
 
-const Home: React.FC = () => {
+const Home = () => {
   return (
     <div className={styles.home}>
       <Hero />

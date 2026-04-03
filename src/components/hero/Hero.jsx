@@ -7,7 +7,7 @@ import 'swiper/css';
 import 'swiper/css/effect-fade';
 import styles from '../../styles/Hero.module.css';
 
-const Hero: React.FC = () => {
+const Hero = () => {
   const slides = [
     '/thushal_cover_photo.jpg',
     '/thushal_cover_photo.jpg',
@@ -17,7 +17,6 @@ const Hero: React.FC = () => {
   return (
     <section className={styles.hero}>
       <div className={styles.container}>
-        {/* Left Content */}
         <motion.div
           className={styles.leftContent}
           initial={{ opacity: 0, y: 30 }}
@@ -39,7 +38,9 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.6 }}
           >
-            I'm a creative graphic designer and UI/UX specialist who creates modern, clean, and eye-catching designs that help brands stand out. With expertise in Adobe Creative Suite, Figma, and design thinking, I transform ideas into compelling visual experiences.
+            I'm a creative graphic designer and UI/UX specialist who creates modern, clean, and
+            eye-catching designs that help brands stand out. With expertise in Adobe Creative Suite,
+            Figma, and design thinking, I transform ideas into compelling visual experiences.
           </motion.p>
 
           <motion.div
@@ -77,15 +78,11 @@ const Hero: React.FC = () => {
           </motion.div>
         </motion.div>
 
-        {/* Right Carousel */}
         <div className={styles.rightContent}>
           <Swiper
             modules={[Autoplay, EffectFade]}
             effect="fade"
-            autoplay={{
-              delay: 5000,
-              disableOnInteraction: false,
-            }}
+            autoplay={{ delay: 5000, disableOnInteraction: false }}
             fadeEffect={{ crossFade: true }}
             speed={1500}
             className={styles.swiper}
@@ -106,7 +103,6 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Scroll Hint */}
       <div className={styles.scrollHint}>
         <span>Scroll to discover more</span>
         <span className={styles.scrollIcon}>↓</span>

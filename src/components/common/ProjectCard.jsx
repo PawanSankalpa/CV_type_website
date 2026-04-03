@@ -1,14 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Project } from '../../data/projects';
 import styles from '../../styles/ProjectCard.module.css';
 
-interface ProjectCardProps {
-  project: Project;
-  onImageClick?: (image: string, title: string) => void;
-}
-
-const ProjectCard: React.FC<ProjectCardProps> = ({ project, onImageClick }) => {
+const ProjectCard = ({ project, onImageClick }) => {
   const handleImageClick = () => {
     if (onImageClick) {
       onImageClick(project.image, project.title);
@@ -21,8 +15,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onImageClick }) => {
       whileHover={{ y: -8 }}
       transition={{ type: 'spring', stiffness: 300, damping: 10 }}
     >
-      <div 
-        className={styles.imageWrapper} 
+      <div
+        className={styles.imageWrapper}
         style={{ aspectRatio: project.aspectRatio || '16/12' }}
         onClick={handleImageClick}
         role="button"

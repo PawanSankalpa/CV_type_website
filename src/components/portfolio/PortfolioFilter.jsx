@@ -2,13 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import styles from '../../styles/PortfolioFilter.module.css';
 
-interface PortfolioFilterProps {
-  categories: string[];
-  activeCategory: string;
-  onCategoryChange: (category: string) => void;
-}
-
-const PortfolioFilter: React.FC<PortfolioFilterProps> = ({
+const PortfolioFilter = ({
   categories,
   activeCategory,
   onCategoryChange,

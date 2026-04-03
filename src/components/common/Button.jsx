@@ -2,19 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import styles from '../../styles/Button.module.css';
 
-interface ButtonProps {
-  children: React.ReactNode;
-  onClick?: () => void;
-  href?: string;
-  variant?: 'primary' | 'secondary' | 'outline';
-  size?: 'sm' | 'md' | 'lg';
-  fullWidth?: boolean;
-  disabled?: boolean;
-  type?: 'button' | 'submit' | 'reset';
-  className?: string;
-}
-
-const Button: React.FC<ButtonProps> = ({
+const Button = ({
   children,
   onClick,
   href,

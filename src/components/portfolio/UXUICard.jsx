@@ -1,17 +1,11 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { UXUIProject } from '../../data/uxuiProjects';
-import { BrandProject } from '../../data/brandProjects';
 import CarouselModal from '../common/CarouselModal';
 import styles from '../../styles/UXUICard.module.css';
 
-type MultiImageProject = UXUIProject | BrandProject;
 
-interface UXUICardProps {
-  project: MultiImageProject;
-}
 
-const UXUICard: React.FC<UXUICardProps> = ({ project }) => {
+const UXUICard = ({ project }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleImageClick = () => {

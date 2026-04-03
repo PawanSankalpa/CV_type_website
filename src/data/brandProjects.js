@@ -1,22 +1,4 @@
-import { CarouselImage } from './uxuiProjects';
-
-export interface BrandProject {
-  id: number;
-  slug: string;
-  title: string;
-  subtitle: string;
-  category: string;
-  thumbnail: string;
-  images: CarouselImage[];
-  description: string;
-  fullDescription: string;
-  technologies: string[];
-  year: number;
-  aspectRatio?: string;
-  gridSize?: 'small' | 'medium' | 'large';
-}
-
-export const brandProjects: BrandProject[] = [
+export const brandProjects = [
   {
     id: 201,
     slug: 'luxia-premium-polo-mockup',
@@ -173,7 +155,7 @@ export const brandProjects: BrandProject[] = [
     ],
     description: 'The culmination of LUXIA\'s brand philosophy: unified group embodying collective identity and aspirational lifestyle',
     fullDescription:
-      'Every great brand tells a story. LUXIA\'s story peaks in this moment: a diverse group of cohort members, united in branded apparel, representing the future. Not costumes. Not uniforms. Identity. The polo has become more than merchandise—it\'s a symbol of belonging to a progressive community of tech innovators. "Wear the Vibe, Own the Moment" isn\'t just a tagline; it\'s a live demonstration. These are people who get it. People who understand that what you wear reflects who you are and what you believe. LUXIA isn\'t selling polos. LUXIA is selling membership to a tribe.',
+      'Every great brand tells a story. LUXIA\'s story peaks in this moment; it\'s a live demonstration. These are people who get it. People who understand that what you wear reflects who you are and what you believe. LUXIA isn\'t selling polos. LUXIA is selling membership to a tribe.',
     technologies: ['Group Branding', 'Lifestyle Photography', 'Community Identity', 'Brand Philosophy'],
     year: 2026,
     aspectRatio: '3/4',

@@ -1,26 +1,4 @@
-// Define UX/UI design projects with carousel support
-export interface CarouselImage {
-  image: string;
-  title: string;
-}
-
-export interface UXUIProject {
-  id: number;
-  slug: string;
-  title: string;
-  subtitle: string;
-  category: string;
-  thumbnail: string; // Main/first image shown in portfolio
-  images: CarouselImage[]; // All pages/screens
-  description: string;
-  fullDescription: string;
-  technologies: string[];
-  year: number;
-  aspectRatio?: string;
-  gridSize?: 'small' | 'medium' | 'large'; // For bento layout
-}
-
-export const uxuiProjects: UXUIProject[] = [
+export const uxuiProjects = [
   {
     id: 101,
     slug: 'cool-ice-app',

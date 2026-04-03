@@ -6,8 +6,8 @@ import Button from '../components/common/Button';
 import { fadeInUp } from '../utils/animations';
 import styles from '../styles/ProjectDetail.module.css';
 
-const ProjectDetail: React.FC = () => {
-  const { slug } = useParams<{ slug: string }>();
+const ProjectDetail = () => {
+  const { slug } = useParams();
   const navigate = useNavigate();
 
   const project = projectsData.find((p) => p.slug === slug);
@@ -45,7 +45,7 @@ const ProjectDetail: React.FC = () => {
             onClick={() => navigate(-1)}
             title="Go back"
           >
-            ← Back
+            &#x2190; Back
           </button>
 
           <motion.div
@@ -119,7 +119,7 @@ const ProjectDetail: React.FC = () => {
                 <>
                   <h4 style={{ marginTop: 'var(--spacing-2xl)' }}>Design Highlights</h4>
                   <ul className={styles.features}>
-                    <li>Modern & eye-catching design</li>
+                    <li>Modern &amp; eye-catching design</li>
                     <li>Brand-aligned aesthetic</li>
                     <li>Optimized for all platforms</li>
                     <li>Enhanced user engagement</li>

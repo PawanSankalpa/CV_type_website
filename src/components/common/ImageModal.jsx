@@ -2,16 +2,9 @@ import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from '../../styles/ImageModal.module.css';
 
-interface ImageModalProps {
-  isOpen: boolean;
-  image: string;
-  title: string;
-  onClose: () => void;
-}
-
-const ImageModal: React.FC<ImageModalProps> = ({ isOpen, image, title, onClose }) => {
+const ImageModal = ({ isOpen, image, title, onClose }) => {
   useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
+    const handleEscape = (e) => {
       if (e.key === 'Escape') {
         onClose();
       }

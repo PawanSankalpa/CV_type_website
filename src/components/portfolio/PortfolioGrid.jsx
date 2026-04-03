@@ -1,24 +1,15 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Project } from '../../data/projects';
-import { UXUIProject } from '../../data/uxuiProjects';
-import { BrandProject } from '../../data/brandProjects';
 import ProjectCard from '../common/ProjectCard';
 import UXUICard from './UXUICard';
 import ImageModal from '../common/ImageModal';
 import { containerVariants, itemVariants } from '../../utils/animations';
 import styles from '../../styles/PortfolioGrid.module.css';
 
-type GridProject = Project | UXUIProject | BrandProject;
+const PortfolioGrid = ({ projects }) => {
+  const [selectedImage, setSelectedImage] = useState(null);
 
-interface PortfolioGridProps {
-  projects: GridProject[];
-}
-
-const PortfolioGrid: React.FC<PortfolioGridProps> = ({ projects }) => {
-  const [selectedImage, setSelectedImage] = useState<{ image: string; title: string } | null>(null);
-
-  const handleImageClick = (image: string, title: string) => {
+  const handleImageClick = (image, title) => {
     setSelectedImage({ image, title });
   };
 
@@ -26,7 +17,7 @@ const PortfolioGrid: React.FC<PortfolioGridProps> = ({ projects }) => {
     setSelectedImage(null);
   };
 
-  const isMultiImageProject = (project: GridProject): project is UXUIProject | BrandProject => {
+  const isMultiImageProject = (project) => {
     return 'images' in project && Array.isArray(project.images);
   };
 
@@ -43,8 +34,8 @@ const PortfolioGrid: React.FC<PortfolioGridProps> = ({ projects }) => {
             {isMultiImageProject(project) ? (
               <UXUICard project={project} />
             ) : (
-              <ProjectCard 
-                project={project as Project}
+              <ProjectCard
+                project={project}
                 onImageClick={handleImageClick}
               />
             )}

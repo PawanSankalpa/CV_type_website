@@ -7,7 +7,7 @@ import About from '../pages/About';
 import Portfolio from '../pages/Portfolio';
 import ProjectDetail from '../pages/ProjectDetail';
 
-const AppRouter: React.FC = () => {
+const AppRouter = () => {
   const [isContactOpen, setIsContactOpen] = useState(false);
 
   return (
