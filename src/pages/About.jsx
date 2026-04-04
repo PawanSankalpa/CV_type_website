@@ -108,7 +108,7 @@ const About = () => {
         <div className={styles.container}>
           <h2>Let's Create Something Amazing</h2>
           <p>Download my CV to learn more about my experience and services.</p>
-          <AnimatedDownload fileName="Thushal_Rashmitha.pdf" />
+          <AnimatedDownload fileName="Thushal_Rashmitha_CV.pdf" />
         </div>
       </section>
     </div>

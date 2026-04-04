@@ -35,7 +35,7 @@ const Portfolio = () => {
               Strategic design solutions for brands that demand excellence. From brand identity
               to UI/UX, every project is crafted to deliver impact.
             </p>
-            <AnimatedDownload fileName="Thushal_Rashmitha.pdf" />
+            <AnimatedDownload fileName="Thushal_Rashmitha_CV.pdf" />
           </motion.div>
         </div>
       </section>
